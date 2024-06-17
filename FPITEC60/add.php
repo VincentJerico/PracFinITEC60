@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
             </select>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="checkbox" onclick="togglePassword()"> Show Password
             <button type="submit">Add User</button>
         </form>
@@ -55,6 +55,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <footer>
         <p>Disclaimer: Your disclaimer message goes here.</p>
     </footer>
-    <script src="js/scripts.js"></script>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>

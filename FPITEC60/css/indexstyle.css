@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {   
+    height: 100vh; /* Ensure the body takes full viewport height */
+    margin: 0; /* Remove default margin */
+    /* overflow: hidden;  Remove this line to enable scrolling */
+    position: relative; /* Needed for the pseudo-element positioning */
+    background-color: #000;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./bg/indexbg.jpg');
+    filter: blur(1.5px);
+    background-color: #EEEEEE;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-mask-image: linear-gradient(to left, #000 10%, rgba(0, 0, 0, 0) 75%);
+    mask-image: linear-gradient(to left, #000 10%, rgba(0, 0, 0, 0) 75%);
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+header {
+    background-color: #222831;
+    color: #EEEEEE;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    width: 0px; 
+    position: relative; /* Ensure the main content is above the pseudo-element */
+}
+
+.container #welcome {
+    font-size: 40px;
+    padding-top: 15px;
+    color: #00ADB5;
+}
+
+.container #greetings {
+    font-size: 16px;
+    padding-top: 13px;
+    justify-content: center;
+    opacity: 85%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.container {
+    color: #EEEEEE;
+    left: 100px;
+    top: 210px;
+    padding: 20px;
+    min-width: 900px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1; /* Ensure the container is above the pseudo-element */
+    position: relative; /* Ensure the container is above the pseudo-element */
+}
+
+.logo img{
+    width: 7%;
+    margin-left: 1.5%;
+    float: left;
+}
+
+nav a {
+    color: #00ADB5;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #222831;
+    color: #EEEEEE;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow-x: hidden;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially translated */
+    animation: fadeUp 2s forwards ease-in-out; /* Apply the fade-up animation */
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+table, th, td {
+    border: 1px solid #393E46;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.member {
+    text-align: center;
+    width: 20%;
+    margin: 1rem 0;
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+button, .button {
+    background: #00acb5;
+    background-image: -webkit-linear-gradient(top, #00acb5, #087175);
+    background-image: -moz-linear-gradient(top, #00acb5, #087175);
+    background-image: -ms-linear-gradient(top, #00acb5, #087175);
+    background-image: -o-linear-gradient(top, #00acb5, #087175);
+    background-image: linear-gradient(to bottom, #00acb5, #087175);
+    -webkit-border-radius: 20;
+    -moz-border-radius: 20;
+    border-radius: 15px;
+    -webkit-box-shadow: 1px 1px 4px #222831;
+    -moz-box-shadow: 1px 1px 4px #222831;
+    box-shadow: 1px 1px 4px #222831;
+    color: #EEEEEE;
+    font-size: 16px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+button:hover, .button:hover {
+    background: #393E46;
+    text-decoration: none;
+}
