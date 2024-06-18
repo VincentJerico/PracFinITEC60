@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </main>
-    <footer>
+    <footer  class="fade-up">
         <p>All Rights Reserved 2024.</p>
     </footer>
     <script src="js/scripts.js"></script>

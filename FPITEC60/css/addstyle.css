@@ -1,21 +1,22 @@
+/* Reset and font styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 body {
     height: 100vh;
-    margin: 0;
     background-color: #EEEEEE;
     color: #393E46;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
 }
 
+/* Header styles */
 header {
     background-color: #222831;
     color: #EEEEEE;
@@ -25,22 +26,42 @@ header {
     align-items: center;
 }
 
-.logo img {
+.logo img{
     width: 7%;
     margin-left: 1.5%;
     float: left;
 }
 
+nav {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    margin-left: 86%;
+}
+
+nav a {
+    color: #00ADB5;
+    margin-left: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 0.5rem;
+}
+
+nav a:hover {
+    color: #008A90;
+}
+
+/* Main content styles */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
     padding: 2rem;
-}
-
-.container {
-    width: 600px;
 }
 
 .form-container {
@@ -71,6 +92,7 @@ form h2 {
     font-size: 2rem;
 }
 
+/* Input group styles */
 .input-group {
     position: relative;
     margin-bottom: 1rem;
@@ -84,8 +106,12 @@ form h2 {
     color: #00ADB5;
 }
 
-input[type="text"], 
-input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+select {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
     margin: 0.5rem 0;
@@ -95,15 +121,27 @@ input[type="password"] {
     transition: border-color 0.3s ease;
 }
 
-input[type="text"]:focus, 
-input[type="password"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+select:focus {
     border-color: #00ADB5;
+}
+
+/* Show password checkbox */
+.show-password {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 input[type="checkbox"] {
     margin-right: 0.5rem;
 }
 
+/* Button styles */
 button {
     width: 100%;
     padding: 0.75rem;
@@ -122,20 +160,7 @@ button:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-form p {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-form p a {
-    color: #00ADB5;
-    text-decoration: none;
-}
-
-form p a:hover {
-    text-decoration: underline;
-}
-
+/* Footer styles */
 footer {
     background-color: #222831;
     color: #EEEEEE;

@@ -13,7 +13,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
 }
 
 header {
@@ -56,7 +55,7 @@ main {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Remaining styles from your CSS */
+/* Input group styles */
 .input-group {
     position: relative;
     margin-bottom: 1rem;
@@ -84,48 +83,6 @@ input[type="email"]:focus {
     border-color: #00ADB5;
 }
 
-input[type="password"] {
-    width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
-    margin: 0.5rem 0;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-input[type="password"]:focus {
-    border-color: #00ADB5;
-}
-
-.password-strength {
-    margin-top: 0.5rem;
-}
-
-.password-strength span {
-    display: inline-block;
-    width: 20%;
-    height: 4px;
-    margin-right: 5px;
-    background-color: #00ADB5;
-}
-
-.password-strength span:last-child {
-    margin-right: 0;
-}
-
-.password-strength span.weak {
-    background-color: #FFD166;
-}
-
-.password-strength span.medium {
-    background-color: #06D6A0;
-}
-
-.password-strength span.strong {
-    background-color: #118AB2;
-}
-
 button {
     width: 100%;
     padding: 0.75rem;
@@ -149,6 +106,28 @@ footer {
     color: #EEEEEE;
     text-align: center;
     padding: 1rem;
-    position: relative;
+    position: fixed; /* Changed from absolute to fixed */
+    bottom: 0;
     width: 100%;
+    overflow-x: hidden;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially translated */
+    animation: fadeUp 2s forwards ease-in-out; /* Apply the fade-up animation */
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .form-container {
+        padding: 3rem;
+    }
 }
